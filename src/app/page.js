@@ -2,6 +2,10 @@
 import TourSearchForm from "./components/TourSearchForm/TourSearchForm";
 import Carousel from "./components/Sliders/Carousel";
 import DestinationGallery from "./components/DestinationGallery/DestinationGallery";
+import TripPlannerIntro from "./components/TripPlannerIntro/TripPlannerIntro";
+import MostPopular from "./components/MostPopular/MostPopular";
+import CategoryShowcase from "./components/CategoryShowcase/CategoryShowcase";
+import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 
 import Styles from "./page.module.css";
 export default function Home() {
@@ -21,6 +25,10 @@ export default function Home() {
         </h2>
         <TourSearchForm />
         <DestinationGallery />
+        <TripPlannerIntro />
+        <MostPopular />
+        <CategoryShowcase />
+        <WhyChooseUs />
       </div>
     </>
   );
