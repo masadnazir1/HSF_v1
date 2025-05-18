@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./MeetTeam.module.css";
 import Image from "next/image";
+import Images from "@/app/Utils/Images";
 import {
   FaFacebookF,
   FaTwitter,
@@ -10,36 +11,40 @@ import {
 
 const teamMembers = [
   {
-    name: "Asad Ali",
+    name: "Qazi Mamoon Ur Rehman",
     position: "Founder & CEO",
-    image: "/images/team/asad.jpg",
+    image: Images.Mamoon,
     social: {
-      facebook: "https://facebook.com/asad",
-      twitter: "https://twitter.com/asad",
-      instagram: "https://instagram.com/asad",
-      linkedin: "https://linkedin.com/in/asad",
+      facebook: "https://www.facebook.com/qazi.hammad.5851",
+      twitter: "https://www.facebook.com/qazi.hammad.5851",
+      instagram: "https://www.facebook.com/qazi.hammad.5851",
+      linkedin: "https://www.facebook.com/qazi.hammad.5851",
     },
   },
   {
-    name: "Ayesha Khan",
+    name: "M Farhan Munawar",
     position: "Tour Manager",
-    image: "/images/team/ayesha.jpg",
+    image: Images.MFM,
     social: {
-      facebook: "https://facebook.com/ayesha",
-      twitter: "https://twitter.com/ayesha",
-      instagram: "https://instagram.com/ayesha",
-      linkedin: "https://linkedin.com/in/ayesha",
+      facebook: "https://www.facebook.com/profile.php?id=100086318834135",
+      twitter: "https://www.facebook.com/profile.php?id=100086318834135",
+      instagram: "https://www.facebook.com/profile.php?id=100086318834135",
+      linkedin: "https://www.facebook.com/profile.php?id=100086318834135",
     },
   },
   {
-    name: "Ali Raza",
+    name: "Waseem Shakir ",
     position: "Marketing Head",
     image: "/images/team/ali.jpg",
     social: {
-      facebook: "https://facebook.com/ali",
-      twitter: "https://twitter.com/ali",
-      instagram: "https://instagram.com/ali",
-      linkedin: "https://linkedin.com/in/ali",
+      facebook:
+        "https://www.facebook.com/profile.php?id=100008156539230&rdid=UoNPgT10pL7gQCVB&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BV15VNf8G%2F",
+      twitter:
+        "https://www.facebook.com/profile.php?id=100008156539230&rdid=UoNPgT10pL7gQCVB&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BV15VNf8G%2F",
+      instagram:
+        "https://www.facebook.com/profile.php?id=100008156539230&rdid=UoNPgT10pL7gQCVB&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BV15VNf8G%2F",
+      linkedin:
+        "https://www.facebook.com/profile.php?id=100008156539230&rdid=UoNPgT10pL7gQCVB&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BV15VNf8G%2F",
     },
   },
 ];

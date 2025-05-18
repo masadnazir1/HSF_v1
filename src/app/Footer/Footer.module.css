@@ -1,0 +1,105 @@
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 3rem 2rem;
+    font-family: sans-serif;
+}
+
+.topSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact {
+    margin-top: 10px;
+}
+
+.column {
+    flex: 1 1 220px;
+    min-width: 200px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 1rem;
+}
+
+.column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.column ul li {
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.input {
+    width: 100%;
+    padding: 0.7rem;
+    background: #1e1d2b;
+    border: none;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.subscribe {
+    width: 100%;
+    background: #00b894;
+    color: #fff;
+    padding: 0.7rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.agreement {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.bottomSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid #3f3d50;
+    padding-top: 1rem;
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .topSection {
+        flex-direction: column;
+    }
+
+    .bottomSection {
+        flex-direction: column;
+        text-align: center;
+    }
+}

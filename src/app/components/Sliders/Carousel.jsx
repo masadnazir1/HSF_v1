@@ -2,6 +2,7 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import AnimatedButton from "../Buttons/AnimatedButton";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -10,23 +11,25 @@ import SliderImages from "@/app/Utils/SliderImages";
 
 const slides = [
   {
-    title: "Adventure in Swiss Alps",
+    title: "Explore the Majestic Hunza Valley",
     description:
-      "Experience breathtaking mountain views and thrilling outdoor activities",
+      "Discover breathtaking mountain views, ancient forts, and warm hospitality in Gilgit-Baltistan.",
+    image: SliderImages.Slide2, // replace with your image ref
+    buttonText: "Discover Hunza",
+  },
+  {
+    title: "Adventure Awaits in Skardu",
+    description:
+      "Experience serene lakes, rugged peaks, and thrilling trekking routes in the heart of the Karakoram.",
     image: SliderImages.Slide1,
-    buttonText: "Discover Switzerland",
+    buttonText: "Discover Skardu",
   },
   {
-    title: "Safari in Kenya",
-    description: "Explore the wild side of Africa in style and comfort",
-    image: SliderImages.Slide2,
-    buttonText: "Discover Kenya",
-  },
-  {
-    title: "Relax in Bali",
-    description: "Enjoy serene beaches, vibrant culture, and peaceful retreats",
+    title: "Relax Amidst Swat Valley’s Green Beauty",
+    description:
+      "Unwind in the lush landscapes and peaceful rivers of the Switzerland of the East.",
     image: SliderImages.Slide3,
-    buttonText: "Discover Bali",
+    buttonText: "Discover Swat",
   },
 ];
 
@@ -52,7 +55,7 @@ export default function Carousel() {
               <div className={styles.caption}>
                 <h2>{slide.title}</h2>
                 <p>{slide.description}</p>
-                <button>{slide.buttonText}</button>
+                <AnimatedButton>{slide.buttonText}</AnimatedButton>
               </div>
             </div>
           </SwiperSlide>

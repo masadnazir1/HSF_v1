@@ -1,16 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { useRouter } from "next/navigation";
 import styles from "../Styles/Header.module.css";
 import Image from "next/image";
 import Images from "../Utils/Images";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
 import IconsExport from "../Utils/IconsExport";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const Router = useRouter();
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const sidebarRef = useRef(null);
 
   useEffect(() => {
@@ -44,8 +47,27 @@ export default function Header() {
     }
   }, [menuOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY.current && window.scrollY > 100) {
+        // Scrolling down
+        setVisible(false);
+      } else {
+        // Scrolling up
+        setVisible(true);
+      }
+      lastScrollY.current = window.scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${visible ? styles.visible : styles.hidden}`}
+    >
       {/* Sidebar Menu */}
       <div ref={sidebarRef} className={styles.sidebarWrapper}>
         <nav className={styles.sidebar}>
@@ -65,12 +87,17 @@ export default function Header() {
             <li>
               <Link href="/">Home</Link>
             </li>
+
             <li>
-              <Link href="/AboutUs">About</Link>
+              <Link href="/Destinations">Destinations</Link>
             </li>
             <li>
-              <Link href="/services">Services</Link>
+              <Link href="/AboutUs">About Us</Link>
             </li>
+            <li>
+              <Link href="/Services">Services</Link>
+            </li>
+
             <li>
               <Link href="/contact">Contact</Link>
             </li>
@@ -113,10 +140,17 @@ export default function Header() {
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/AboutUs">About</Link>
+              <Link href="/Destinations">Destinations</Link>
             </li>
             <li>
-              <Link href="/services">Services</Link>
+              <Link href="/AboutUs">About Us</Link>
+            </li>
+            <li>
+              <Link href="/Services">Services</Link>
+            </li>
+
+            <li>
+              <Link href="/PrivacyPolicy">PrivacyPolicy</Link>
             </li>
             <li>
               <Link href="/blog">Blog</Link>
@@ -124,7 +158,12 @@ export default function Header() {
           </ul>
         </div>
 
-        <button className={styles.contactButton}>Contact Us</button>
+        <button
+          className={styles.contactButton}
+          onClick={() => Router.push("/contact")}
+        >
+          Contact Us
+        </button>
       </div>
     </header>
   );
