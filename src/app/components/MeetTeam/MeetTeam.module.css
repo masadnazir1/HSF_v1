@@ -1,0 +1,85 @@
+.teamSection {
+    padding: 4rem 1rem;
+    text-align: center;
+    background-color: #f9fafb;
+}
+
+.heading {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.teamGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    max-width: 320px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.imageWrapper {
+    margin-bottom: 1rem;
+}
+
+.profileImage {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 1.3rem;
+    color: #0f172a;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.position {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.socialIcons a {
+    font-size: 1.1rem;
+    color: #334155;
+    background-color: #e2e8f0;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.socialIcons a:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+/* Responsive Grid for larger screens */
+@media (min-width: 768px) {
+    .teamGrid {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}

@@ -6,8 +6,6 @@ import Carousel from "./components/Sliders/Carousel";
 export default function Home() {
   return (
     <>
-      <Header />
-
       <Carousel />
     </>
   );

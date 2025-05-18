@@ -14,13 +14,21 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    width: 100%;
+}
+
+.WraperUI {
+    width: 60%;
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+    margin-right: 10px;
 }
 
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .logo span {
@@ -87,13 +95,14 @@
 }
 
 .contactButton {
-    padding: 0.5rem 1.5rem;
+    padding: 15px;
     background: #000;
     border: none;
     color: #fff;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 106px;
     cursor: pointer;
+    width: 135px;
     transition: all 0.3s ease;
 }
 
@@ -135,26 +144,59 @@
 }
 
 /* Sidebar Menu */
-.sidebar {
+
+.sidebarWrapper {
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    width: 70%;
+    /* width: 70%; */
     height: 100vh;
-    background: #ffffff;
+    background: #17030388;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     padding: 1rem 1rem;
     transform: translateX(-100%);
     z-index: 1000;
 }
 
+.sidebar {
+    background: #fff;
+    width: 70%;
+    height: 90vh;
+    padding: 1rem;
+    position: absolute;
+    transform: translateX(-100%);
+    box-shadow: 2px 0 10px #0000001a;
+    margin-left: 65%;
+    bottom: 0;
+    border-top-right-radius: 20px;
+}
+
 .sidebar ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding: 5px;
+    margin-top: 40px;
+    gap: 10px;
+
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+
+}
+
+.sidebar li {
+
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: #ccc;
+
+    }
+
 }
 
 .sidebar li a {
@@ -163,6 +205,7 @@
     color: #333;
     font-weight: 500;
     transition: color 0.3s ease;
+
 }
 
 .sidebar li a:hover {

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { gsap } from "gsap";
 import styles from "../Styles/Header.module.css";
@@ -10,6 +12,21 @@ import IconsExport from "../Utils/IconsExport";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const sidebarRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 786) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Initial check
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (menuOpen) {
@@ -30,35 +47,36 @@ export default function Header() {
   return (
     <header className={styles.header}>
       {/* Sidebar Menu */}
-
-      <nav ref={sidebarRef} className={styles.sidebar}>
-        <button
-          className={styles.ToggleClose}
-          onClick={() => setMenuOpen(false)}
-        >
-          <Image
-            src={Images.closeicon}
-            alt="X"
-            className={styles.X}
-            width={30}
-            height={30}
-          />
-        </button>
-        <ul>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
-            <Link href="/services">Services</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
+      <div ref={sidebarRef} className={styles.sidebarWrapper}>
+        <nav className={styles.sidebar}>
+          <button
+            className={styles.ToggleClose}
+            onClick={() => setMenuOpen(false)}
+          >
+            <Image
+              src={Images.closeicon}
+              alt="X"
+              className={styles.X}
+              width={30}
+              height={30}
+            />
+          </button>
+          <ul>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/services">Services</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       {/* Mobile Header */}
       <div className={styles.mobileHeader}>
@@ -89,20 +107,23 @@ export default function Header() {
           <Image src={Images.logo} alt="Logo" width={50} height={40} />
           <span>Dream Discover with HSF</span>
         </div>
-        <ul className={styles.navMenu}>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
-            <Link href="/services">Services</Link>
-          </li>
-          <li>
-            <Link href="/blog">Blog</Link>
-          </li>
-        </ul>
+        <div className={styles.WraperUI}>
+          <ul className={styles.navMenu}>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/services">Services</Link>
+            </li>
+            <li>
+              <Link href="/blog">Blog</Link>
+            </li>
+          </ul>
+        </div>
+
         <button className={styles.contactButton}>Contact Us</button>
       </div>
     </header>

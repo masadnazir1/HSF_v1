@@ -1,0 +1,54 @@
+.headerSection {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.55);
+    /* Dark overlay */
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem;
+    text-align: center;
+}
+
+.textContent {
+    color: white;
+    max-width: 768px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #f1f1f1;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1.25rem;
+    }
+}
